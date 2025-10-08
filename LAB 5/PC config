@@ -1,0 +1,53 @@
+
+Packet Tracer PC Command Line 1.0
+PC>ping 192.168.1.1
+
+Pinging 192.168.1.1 with 32 bytes of data:
+
+Reply from 192.168.1.1: bytes=32 time=0ms TTL=255
+Reply from 192.168.1.1: bytes=32 time=0ms TTL=255
+Reply from 192.168.1.1: bytes=32 time=0ms TTL=255
+Reply from 192.168.1.1: bytes=32 time=0ms TTL=255
+
+Ping statistics for 192.168.1.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+PC>telnet 192.168.1.1
+Trying 192.168.1.1 ...Open
+
+
+User Access Verification
+
+Password: 
+R1>enable
+Password: 
+Password: 
+Password: 
+R1#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+ 
+FastEthernet0/0        192.168.1.1     YES manual up                    up
+ 
+FastEthernet1/0        unassigned      YES unset  administratively down down
+ 
+Serial2/0              unassigned      YES unset  administratively down down
+ 
+Serial3/0              unassigned      YES unset  administratively down down
+ 
+FastEthernet4/0        unassigned      YES unset  administratively down down
+ 
+FastEthernet5/0        unassigned      YES unset  administratively down down
+R1#enable
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#int Fa 1/0
+R1(config-if)#ip add 192.168.1.2 255.255.255.0
+% 192.168.1.0 overlaps with FastEthernet0/0
+R1(config-if)#
+R1(config-if)#
+
+[Connection to 192.168.1.1 closed by foreign host]
+PC>
+PC>
